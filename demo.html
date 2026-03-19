@@ -2,6 +2,8 @@
 <html lang="en">
 <!DOCTYPE html>
 <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -2085,8 +2087,137 @@
   }
   .checkout-success h2 { font-family: var(--serif); font-size: 1.8rem; font-weight: 400; margin-bottom: 0.75rem; }
   .checkout-success p { font-size: 14px; color: var(--gray-dark); max-width: 400px; margin: 0 auto 2rem; line-height: 1.7; }
+
+  @keyframes deviceFloat {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-10px); }
+  }
+  .phone-device { animation: deviceFloat 4s ease-in-out infinite; }
+  .desktop-device { animation: deviceFloat 5s ease-in-out infinite 0.8s; }
+  #phone-screen, #desktop-screen { scroll-behavior: smooth; }
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#111110;--white:#fff;--gray:#f7f6f3;--border:rgba(0,0,0,0.08);
+  --accent:#1a6b4a;--accent-light:#eaf3de;
+  --serif:'Instrument Serif',Georgia,serif;--sans:'DM Sans',sans-serif;
+}
+body{font-family:var(--sans);background:var(--gray);color:var(--black);min-height:100vh;-webkit-font-smoothing:antialiased;}
+
+/* HEADER */
+.header{background:var(--black);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;}
+.header-logo{font-family:var(--serif);font-size:1.1rem;color:white;}
+.header-logo span{color:var(--accent);font-style:italic;}
+.header-badge{font-size:11px;background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);padding:4px 12px;border-radius:20px;letter-spacing:0.06em;text-transform:uppercase;}
+
+/* MAIN */
+.main{max-width:900px;margin:0 auto;padding:3rem 2rem;}
+
+.page-title{font-family:var(--serif);font-size:2.5rem;font-weight:400;margin-bottom:0.5rem;line-height:1.1;}
+.page-title em{font-style:italic;color:var(--accent);}
+.page-sub{font-size:0.95rem;color:#666;font-weight:300;margin-bottom:3rem;line-height:1.7;max-width:500px;}
+
+/* STEP INDICATOR */
+.steps{display:flex;gap:0;margin-bottom:2.5rem;border-radius:12px;overflow:hidden;border:1px solid var(--border);}
+.step-btn{flex:1;padding:0.9rem;background:white;border:none;cursor:pointer;font-family:var(--sans);font-size:13px;font-weight:400;color:#888;border-right:1px solid var(--border);transition:all 0.2s;display:flex;align-items:center;justify-content:center;gap:8px;}
+.step-btn:last-child{border-right:none;}
+.step-btn.active{background:var(--black);color:white;}
+.step-btn.done{background:var(--accent-light);color:var(--accent);}
+.step-num{width:20px;height:20px;border-radius:50%;background:currentColor;opacity:0.2;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;flex-shrink:0;}
+.step-btn.active .step-num,.step-btn.done .step-num{opacity:1;background:currentColor;color:white;}
+.step-btn.done .step-num{background:var(--accent);color:white;}
+
+/* PANELS */
+.panel{display:none;}
+.panel.active{display:block;}
+
+/* CARD */
+.card{background:white;border-radius:16px;border:1px solid var(--border);padding:2rem;margin-bottom:1.5rem;}
+.card-title{font-size:1rem;font-weight:500;margin-bottom:0.4rem;}
+.card-sub{font-size:13px;color:#888;font-weight:300;margin-bottom:1.5rem;line-height:1.6;}
+
+/* FORM */
+.form-group{margin-bottom:1rem;}
+.form-group label{display:block;font-size:11px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:#888;margin-bottom:0.4rem;}
+.form-group input,.form-group select,.form-group textarea{
+  width:100%;padding:0.7rem 0.9rem;
+  border:1px solid #ddd;border-radius:8px;
+  font-family:var(--sans);font-size:14px;color:var(--black);
+  background:white;outline:none;transition:border-color 0.2s;
+}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--accent);}
+.form-group textarea{resize:vertical;min-height:80px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:600px){.form-row{grid-template-columns:1fr;}}
+
+/* CATEGORY PILLS */
+.category-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin-top:0.5rem;}
+.cat-pill{
+  padding:0.6rem 0.5rem;border-radius:10px;border:1.5px solid var(--border);
+  background:white;cursor:pointer;text-align:center;transition:all 0.15s;
+  font-size:13px;color:#555;
+}
+.cat-pill:hover{border-color:var(--accent);color:var(--accent);}
+.cat-pill.selected{background:var(--accent);color:white;border-color:var(--accent);}
+.cat-pill span{display:block;font-size:18px;margin-bottom:3px;}
+
+/* REVIEWS INPUT */
+.review-card{background:var(--gray);border-radius:10px;padding:1rem;margin-bottom:0.75rem;position:relative;}
+.review-card-header{display:flex;gap:8px;align-items:center;margin-bottom:0.5rem;}
+.review-avatar{width:32px;height:32px;border-radius:50%;background:var(--accent);color:white;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;flex-shrink:0;}
+.review-name{font-size:13px;font-weight:500;}
+.review-stars{color:#f5b731;font-size:12px;}
+.review-remove{position:absolute;top:0.75rem;right:0.75rem;background:none;border:none;cursor:pointer;font-size:14px;color:#aaa;}
+.review-remove:hover{color:#e24b4a;}
+.add-review-btn{width:100%;padding:0.65rem;border:1.5px dashed #ddd;border-radius:10px;background:none;cursor:pointer;font-family:var(--sans);font-size:13px;color:#888;transition:all 0.2s;}
+.add-review-btn:hover{border-color:var(--accent);color:var(--accent);}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:0.75rem 1.5rem;border-radius:8px;font-family:var(--sans);font-size:14px;font-weight:500;cursor:pointer;border:none;transition:all 0.2s;text-decoration:none;}
+.btn-primary{background:var(--black);color:white;}
+.btn-primary:hover{background:var(--accent);}
+.btn-secondary{background:white;color:var(--black);border:1px solid var(--border);}
+.btn-secondary:hover{border-color:var(--black);}
+.btn-row{display:flex;gap:0.75rem;justify-content:flex-end;margin-top:1.5rem;}
+.btn-generate{background:var(--accent);color:white;width:100%;justify-content:center;padding:1rem;font-size:15px;border-radius:10px;}
+.btn-generate:hover{background:#15593d;}
+
+/* API KEY */
+.api-info{background:var(--accent-light);border-radius:10px;padding:1rem 1.25rem;margin-bottom:1.5rem;border:1px solid rgba(26,107,74,0.15);}
+.api-info p{font-size:13px;color:#1a6b4a;line-height:1.6;}
+.api-info strong{font-weight:500;}
+
+/* PREVIEW */
+.preview-container{margin-top:2rem;}
+.preview-bar{background:white;border:1px solid var(--border);border-radius:12px 12px 0 0;padding:0.75rem 1rem;display:flex;align-items:center;gap:10px;}
+.preview-dots{display:flex;gap:5px;}
+.preview-dots span{width:10px;height:10px;border-radius:50%;background:#ddd;}
+.preview-dots span:nth-child(1){background:#fc615d;}
+.preview-dots span:nth-child(2){background:#fdbc40;}
+.preview-dots span:nth-child(3){background:#34c749;}
+.preview-url{flex:1;background:var(--gray);border-radius:5px;padding:4px 10px;font-size:12px;color:#888;}
+.preview-frame{width:100%;height:600px;border:1px solid var(--border);border-top:none;border-radius:0 0 12px 12px;background:white;}
+
+/* OUTREACH */
+.outreach-box{background:white;border-radius:12px;border:1px solid var(--border);padding:1.5rem;}
+.outreach-tab-row{display:flex;gap:8px;margin-bottom:1.25rem;}
+.otab{padding:0.45rem 1rem;border-radius:6px;border:1px solid var(--border);background:none;cursor:pointer;font-family:var(--sans);font-size:13px;font-weight:400;transition:all 0.15s;}
+.otab.active{background:var(--black);color:white;border-color:var(--black);}
+.outreach-msg{background:var(--gray);border-radius:8px;padding:1rem 1.25rem;font-size:13px;line-height:1.8;white-space:pre-wrap;font-family:var(--sans);color:var(--black);}
+.copy-btn{margin-top:0.75rem;display:flex;align-items:center;gap:6px;padding:0.5rem 1rem;border-radius:6px;border:1px solid var(--border);background:white;cursor:pointer;font-family:var(--sans);font-size:12px;font-weight:500;transition:all 0.15s;}
+.copy-btn:hover{border-color:var(--accent);color:var(--accent);}
+
+/* LOADING */
+.loading{display:none;text-align:center;padding:3rem;}
+.spinner{width:40px;height:40px;border:3px solid var(--accent-light);border-top-color:var(--accent);border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 1rem;}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+/* TAGS */
+.tag{display:inline-block;background:var(--accent-light);color:var(--accent);font-size:11px;font-weight:500;padding:2px 8px;border-radius:10px;margin-right:4px;}
+
+  /* END DEMO STYLES */
 </style>
-<title>Contact — Vayu & Mridul</title>
+<title>Free Demo — Vayu & Mridul</title>
 </head>
 <body>
 <div class="scroll-progress" id="scrollProgress"></div>
@@ -2107,13 +2238,13 @@
 <nav>
   <a class="nav-logo" href="#">Vayu <span>&</span> Mridul</a>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html" style="color:var(--accent);">Home</a></li>
     <li><a href="index.html#services">Services</a></li>
     <li><a href="pricing.html">Pricing</a></li>
     <li><a href="work.html">Our Work</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="faq.html">FAQ</a></li>
-    <li><a href="demo.html" style="color:var(--accent);">Free Demo ✦</a></li>
+    <li><a href="demo.html" style="color:var(--accent);">Free Demo</a></li>
     <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -2128,106 +2259,559 @@
   <a href="work.html" onclick="closeMobile()">Our Work</a>
   <a href="about.html" onclick="closeMobile()">About</a>
   <a href="faq.html" onclick="closeMobile()">FAQ</a>
-  <a href="demo.html" onclick="closeMobile()" style="color:var(--accent);">Free Demo ✦</a>
+  <a href="demo.html" onclick="closeMobile()" style="color:var(--accent);">Free Demo</a>
   <a href="contact.html" class="nav-cta" onclick="closeMobile()">Get a Quote</a>
 </div>
 
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="contact-wrapper">
-    <div class="contact-info">
-      <p class="section-label">Get in touch</p>
-      <h2 class="section-title">Ready to get <em>online?</em></h2>
-      <p>Great reviews but no website? That's customers you're losing every day. Let's fix that — reach out and we'll respond within 24 hours.</p>
-      <div class="contact-methods">
-        <a href="tel:+918708680800" class="contact-method">
-          <div class="cm-icon">📞</div>
-          <div class="cm-text">
-            <span class="cm-label">Call Mridul</span>
-            <span class="cm-value">+91 870 8680800</span>
-          </div>
-        </a>
-        <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#101;&#108;&#108;&#111;&#64;&#118;&#97;&#121;&#117;&#109;&#114;&#105;&#100;&#117;&#108;&#46;&#99;&#111;&#109;" class="contact-method">
-          <div class="cm-icon">✉️</div>
-          <div class="cm-text">
-            <span class="cm-label">Email us</span>
-            <span class="cm-value">hello&#64;vayumridul&#46;com</span>
-          </div>
-        </a>
 
-        <a href="https://wa.me/918708680800" target="_blank" class="contact-method">
-          <div class="cm-icon">💬</div>
-          <div class="cm-text">
-            <span class="cm-label">WhatsApp</span>
-            <span class="cm-value">Chat with us now</span>
-          </div>
-        </a>
-        <a href="tel:+919899919881" class="contact-method" style="opacity:0.6;">
-          <div class="cm-icon">📞</div>
-          <div class="cm-text">
-            <span class="cm-label">Call Vayu (if unavailable)</span>
-            <span class="cm-value" style="font-size:13px;">+91 989 9919881</span>
-          </div>
-        </a>
-        <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#118;&#97;&#121;&#117;&#109;&#114;&#105;&#100;&#117;&#108;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;" class="contact-method" style="opacity:0.55;">
-          <div class="cm-icon" style="font-size:14px;">✉️</div>
-          <div class="cm-text">
-            <span class="cm-label">Also us</span>
-            <span class="cm-value" style="font-size:13px;">vayumridul&#64;gmail&#46;com</span>
-          </div>
-        </a>
-      </div>
-    <!-- Subtle map embed -->
-    <div style="margin-top:1.25rem; border-radius:10px; overflow:hidden; border:1px solid var(--border); opacity:0.75;">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.2!2d77.2341!3d28.5461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce26b6b6b6b6b%3A0x0!2sHemkunt+Colony%2C+Greater+Kailash+1%2C+New+Delhi%2C+Delhi+110048!5e0!3m2!1sen!2sin!4v1"
-        width="100%"
-        height="140"
-        style="border:0; display:block;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
+<!-- DEMO PAGE HERO -->
+<section style="padding:8rem clamp(1.5rem,8vw,8rem) 3rem;background:linear-gradient(135deg,var(--gray-bg) 0%,#eaf3de 100%);border-bottom:1px solid var(--border);">
+  <div style="max-width:700px;">
+    <div style="display:inline-flex;align-items:center;gap:8px;background:var(--accent-light);border:1px solid rgba(26,107,74,0.2);padding:4px 14px;border-radius:20px;margin-bottom:1.5rem;">
+      <span style="width:6px;height:6px;border-radius:50%;background:var(--accent);animation:ctaPulse 2s ease infinite;display:inline-block;"></span>
+      <span style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent-mid);">Free — no payment needed</span>
     </div>
-    </div>
-    <div class="contact-form-card">
-      <p class="form-title">Send us a message</p>
-      <form onsubmit="handleSubmit(event)">
-        <div class="form-group">
-          <label>Your name</label>
-          <input type="text" placeholder="Raj Sharma" required />
-        </div>
-        <div class="form-group">
-          <label>Business name</label>
-          <input type="text" placeholder="Sharma's Café" required />
-        </div>
-        <div class="form-group">
-          <label>Phone number</label>
-          <input type="tel" placeholder="+91 98765 43210" required />
-        </div>
-        <div class="form-group">
-          <label>Package interested in</label>
-          <select>
-            <option value="">Select a package</option>
-            <option>Demo Preview — ₹2,999</option>
-            <option>Starter — ₹15,999</option>
-            <option>Growth — ₹32,999</option>
-            <option>Premium — ₹1,39,999</option>
-            <option>Not sure yet</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Tell us about your business</label>
-          <textarea placeholder="We run a café in Delhi with great reviews on Google but no website..."></textarea>
-        </div>
-        <button type="submit" class="form-submit">Send Message →</button>
-      </form>
-    </div>
+    <h1 class="section-title" style="font-size:clamp(2.2rem,5vw,3.5rem);margin-bottom:1rem;">See your business <em>online today.</em></h1>
+    <p style="font-size:1.05rem;color:var(--gray-dark);font-weight:300;line-height:1.75;max-width:540px;margin-bottom:0;">Fill in your business details below and we'll generate a live website demo in seconds — completely free. If you love it, we can make it live in 48 hours.</p>
   </div>
 </section>
 
+<div style="background:var(--gray-bg);padding:2rem clamp(1.5rem,8vw,8rem) 4rem;">
+  <div style="max-width:900px;margin:0 auto;">
 
+  <span class="header-badge">Demo Generator</span>
+</div>
+
+<div class="main">
+  <h1 class="page-title">Generate a <em>demo site</em><br>for any business.</h1>
+  <p class="page-sub">Fill in the business details, add their reviews and photos, and we'll generate a live demo link you can send via WhatsApp or email — before they've paid a rupee.</p>
+
+  <!-- STEP INDICATOR -->
+  <div class="steps">
+    <button class="step-btn active" onclick="goStep(1)" id="step1btn">
+      <span class="step-num">1</span> Business Info
+    </button>
+    <button class="step-btn" onclick="goStep(2)" id="step2btn">
+      <span class="step-num">2</span> Reviews & Photos
+    </button>
+    <button class="step-btn" onclick="goStep(3)" id="step3btn">
+      <span class="step-num">3</span> Generate & Share
+    </button>
+  </div>
+
+  <!-- PANEL 1: BUSINESS INFO -->
+  <div class="panel active" id="panel1">
+    <div class="card">
+      <p class="card-title">Business Details</p>
+      <p class="card-sub">Enter the basic info about the business — pull it from Google Maps or type manually.</p>
+
+      <div class="api-info">
+        <p>💡 <strong>Paste a Google Maps link</strong> and we'll auto-fill the details — or fill in manually below. Enter your API key once to enable auto-fill.</p>
+      </div>
+
+      <div class="form-group">
+        <label>Google Maps URL (optional)</label>
+        <div style="display:flex;gap:8px;">
+          <input type="text" id="mapsUrl" placeholder="https://maps.google.com/..." style="flex:1;"/>
+          <button class="btn btn-secondary" onclick="fetchFromMaps()" style="flex-shrink:0;">Auto-fill</button>
+        </div>
+      </div>
+
+      <div style="text-align:center;color:#aaa;font-size:13px;margin:0.75rem 0;">— or fill manually —</div>
+
+      <div class="form-group">
+        <label>Business Name *</label>
+        <input type="text" id="bizName" placeholder="e.g. Sharma's Café"/>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>City / Area</label>
+          <input type="text" id="bizCity" placeholder="e.g. Lajpat Nagar, Delhi"/>
+        </div>
+        <div class="form-group">
+          <label>Google Rating</label>
+          <input type="text" id="bizRating" placeholder="e.g. 4.8"/>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="text" id="bizPhone" placeholder="+91 98765 43210"/>
+        </div>
+        <div class="form-group">
+          <label>Total Reviews</label>
+          <input type="text" id="bizReviewCount" placeholder="e.g. 312"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Address</label>
+        <input type="text" id="bizAddress" placeholder="Full address"/>
+      </div>
+      <div class="form-group">
+        <label>Tagline / About (1–2 sentences)</label>
+        <textarea id="bizTagline" placeholder="A warm neighbourhood café serving specialty coffee and homemade bakes since 2018."></textarea>
+      </div>
+    </div>
+
+    <div class="card">
+      <p class="card-title">Business Category</p>
+      <p class="card-sub">This sets the colour palette, tone, and template style.</p>
+      <div class="category-grid" id="categoryGrid">
+        <div class="cat-pill selected" data-cat="cafe" onclick="selectCat(this)"><span>☕</span>Café</div>
+        <div class="cat-pill" data-cat="restaurant" onclick="selectCat(this)"><span>🍽️</span>Restaurant</div>
+        <div class="cat-pill" data-cat="resort" onclick="selectCat(this)"><span>🏨</span>Resort/Hotel</div>
+        <div class="cat-pill" data-cat="salon" onclick="selectCat(this)"><span>💇</span>Salon/Spa</div>
+        <div class="cat-pill" data-cat="retail" onclick="selectCat(this)"><span>🛍️</span>Retail</div>
+        <div class="cat-pill" data-cat="fitness" onclick="selectCat(this)"><span>🏋️</span>Fitness</div>
+        <div class="cat-pill" data-cat="medical" onclick="selectCat(this)"><span>⚕️</span>Medical/Clinic</div>
+        <div class="cat-pill" data-cat="other" onclick="selectCat(this)"><span>🏪</span>Other</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <p class="card-title">Services / Menu Items</p>
+      <p class="card-sub">Add 3–6 key services or menu items with prices. Visitors will see these on the demo.</p>
+      <div id="servicesList">
+        <div class="form-row service-row">
+          <div class="form-group"><label>Item Name</label><input type="text" placeholder="e.g. Cold Brew Coffee" class="svc-name"/></div>
+          <div class="form-group"><label>Price</label><input type="text" placeholder="₹220" class="svc-price"/></div>
+        </div>
+        <div class="form-row service-row">
+          <div class="form-group"><input type="text" placeholder="e.g. Croissant" class="svc-name"/></div>
+          <div class="form-group"><input type="text" placeholder="₹180" class="svc-price"/></div>
+        </div>
+        <div class="form-row service-row">
+          <div class="form-group"><input type="text" placeholder="e.g. Matcha Latte" class="svc-name"/></div>
+          <div class="form-group"><input type="text" placeholder="₹260" class="svc-price"/></div>
+        </div>
+      </div>
+      <button class="add-review-btn" onclick="addService()" style="margin-top:0.5rem;">+ Add another item</button>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-primary" onclick="goStep(2)">Next: Reviews & Photos →</button>
+    </div>
+  </div>
+
+  <!-- PANEL 2: REVIEWS & PHOTOS -->
+  <div class="panel" id="panel2">
+    <div class="card">
+      <p class="card-title">Customer Reviews</p>
+      <p class="card-sub">Add up to 4 real Google reviews. Copy them from the business's Google Maps page.</p>
+      <div id="reviewsList">
+        <div class="review-card">
+          <div class="review-card-header">
+            <div class="review-avatar">A</div>
+            <div><div class="review-name"><input type="text" placeholder="Reviewer name" style="border:none;background:none;font-size:13px;font-weight:500;width:100%;outline:none;" class="rv-name"/></div><div class="review-stars">★★★★★</div></div>
+          </div>
+          <textarea placeholder="Paste the review text here..." style="width:100%;border:none;background:none;font-size:13px;resize:none;outline:none;min-height:50px;" class="rv-text"></textarea>
+        </div>
+        <div class="review-card">
+          <div class="review-card-header">
+            <div class="review-avatar" style="background:#185fa5;">R</div>
+            <div><div class="review-name"><input type="text" placeholder="Reviewer name" style="border:none;background:none;font-size:13px;font-weight:500;width:100%;outline:none;" class="rv-name"/></div><div class="review-stars">★★★★★</div></div>
+          </div>
+          <textarea placeholder="Paste the review text here..." style="width:100%;border:none;background:none;font-size:13px;resize:none;outline:none;min-height:50px;" class="rv-text"></textarea>
+        </div>
+      </div>
+      <button class="add-review-btn" onclick="addReview()">+ Add another review</button>
+    </div>
+
+    <div class="card">
+      <p class="card-title">Photo URLs</p>
+      <p class="card-sub">Paste direct image URLs from Google Maps, Instagram, or their website. We'll embed them in the demo.</p>
+      <div id="photosList">
+        <div class="form-group"><label>Photo 1 (Hero / exterior)</label><input type="url" class="photo-url" placeholder="https://..."/></div>
+        <div class="form-group"><label>Photo 2 (Interior / product)</label><input type="url" class="photo-url" placeholder="https://..."/></div>
+        <div class="form-group"><label>Photo 3 (Food / service)</label><input type="url" class="photo-url" placeholder="https://..."/></div>
+      </div>
+      <button class="add-review-btn" onclick="addPhoto()">+ Add another photo</button>
+
+      <div style="margin-top:1rem;padding:0.75rem;background:var(--gray);border-radius:8px;">
+        <p style="font-size:12px;color:#888;line-height:1.6;">💡 <strong>How to get photo URLs:</strong> Open Google Maps → find the business → click Photos → right-click any photo → "Copy image address". Or use their Instagram/website photos.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <p class="card-title">API Key (for auto-fill)</p>
+      <p class="card-sub">Optional — enter your Google Places API key to auto-fill business details from a Maps URL.</p>
+      <div class="form-group">
+        <label>Google Places API Key</label>
+        <input type="text" id="apiKey" value="AIzaSyAxh8t8ijw6uoiuMQja1HG-HMvxBKji_3k"/>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="goStep(1)">← Back</button>
+      <button class="btn btn-primary" onclick="goStep(3)">Generate Demo →</button>
+    </div>
+  </div>
+
+  <!-- PANEL 3: GENERATE -->
+  <div class="panel" id="panel3">
+    <div class="loading" id="loadingBox">
+      <div class="spinner"></div>
+      <p style="color:#888;font-size:14px;">Building your demo site...</p>
+    </div>
+
+    <div id="generatedContent" style="display:none;">
+
+      <!-- DEMO LINK -->
+      <div class="card" style="background:var(--black);border-color:var(--black);">
+        <p style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.5rem;">Your demo link</p>
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+          <p id="demoLinkText" style="font-family:var(--serif);font-size:1.3rem;color:white;flex:1;"></p>
+          <button class="btn" style="background:var(--accent);color:white;flex-shrink:0;" onclick="copyDemoLink()">Copy Link</button>
+          <button class="btn" style="background:rgba(255,255,255,0.1);color:white;flex-shrink:0;" onclick="openDemo()">Preview ↗</button>
+        </div>
+        <p style="font-size:12px;color:rgba(255,255,255,0.3);margin-top:0.75rem;">Upload the generated <code style="background:rgba(255,255,255,0.1);padding:1px 6px;border-radius:4px;">demo/[name].html</code> file to your Vercel project to make this link live.</p>
+      </div>
+
+      <!-- PREVIEW -->
+      <div class="preview-container">
+        <div class="preview-bar">
+          <div class="preview-dots"><span></span><span></span><span></span></div>
+          <div class="preview-url" id="previewUrl">vayumridul.com/demo/...</div>
+        </div>
+        <iframe class="preview-frame" id="previewFrame"></iframe>
+      </div>
+
+      <!-- DOWNLOAD -->
+      <div class="card" style="margin-top:1.5rem;">
+        <p class="card-title">Download & Deploy</p>
+        <p class="card-sub">Download the demo file and upload it to your Vercel project inside a <code>/demo/</code> folder.</p>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+          <button class="btn btn-primary" onclick="downloadDemo()">⬇ Download HTML File</button>
+          <button class="btn btn-secondary" onclick="regenerate()">↺ Regenerate</button>
+        </div>
+      </div>
+
+      <!-- OUTREACH MESSAGES -->
+      <div class="card">
+        <p class="card-title">Outreach Messages</p>
+        <p class="card-sub">Ready-to-send messages personalised for this business. Copy and paste into WhatsApp or email.</p>
+        <div class="outreach-box">
+          <div class="outreach-tab-row">
+            <button class="otab active" onclick="switchOutreach('whatsapp',this)">💬 WhatsApp</button>
+            <button class="otab" onclick="switchOutreach('email',this)">✉️ Email</button>
+          </div>
+          <div class="outreach-msg" id="outreachMsg"></div>
+          <button class="copy-btn" onclick="copyOutreach()">📋 Copy message</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="btn-row" id="backBtn3">
+      <button class="btn btn-secondary" onclick="goStep(2)">← Back</button>
+      <button class="btn btn-generate" onclick="generateDemo()">⚡ Generate Demo Site</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── STATE ─────────────────────────────────────────────────────────────────────
+var selectedCat = 'cafe';
+var generatedHTML = '';
+var bizData = {};
+
+// ── STEPS ─────────────────────────────────────────────────────────────────────
+function goStep(n) {
+  document.querySelectorAll('.panel').forEach(function(p,i){
+    p.classList.toggle('active', i === n-1);
+  });
+  document.querySelectorAll('.step-btn').forEach(function(b,i){
+    b.classList.remove('active','done');
+    if(i < n-1) b.classList.add('done');
+    else if(i === n-1) b.classList.add('active');
+  });
+  if(n === 3) {
+    document.getElementById('backBtn3').style.display = 'flex';
+    document.getElementById('generatedContent').style.display = 'none';
+    document.getElementById('loadingBox').style.display = 'none';
+  }
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ── CATEGORY ──────────────────────────────────────────────────────────────────
+function selectCat(el) {
+  document.querySelectorAll('.cat-pill').forEach(function(p){ p.classList.remove('selected'); });
+  el.classList.add('selected');
+  selectedCat = el.dataset.cat;
+}
+
+// ── ADD ITEMS ─────────────────────────────────────────────────────────────────
+function addService() {
+  var list = document.getElementById('servicesList');
+  var row = document.createElement('div');
+  row.className = 'form-row service-row';
+  row.innerHTML = '<div class="form-group"><input type="text" placeholder="Service / item name" class="svc-name"/></div><div class="form-group"><input type="text" placeholder="₹0" class="svc-price"/></div>';
+  list.appendChild(row);
+}
+
+var reviewColors = ['#1a6b4a','#185fa5','#993c1d','#6b3a8a','#854F0B'];
+var reviewIdx = 2;
+function addReview() {
+  var list = document.getElementById('reviewsList');
+  var color = reviewColors[reviewIdx % reviewColors.length];
+  var initial = 'ABCDEFGHIJK'[reviewIdx % 11];
+  reviewIdx++;
+  var div = document.createElement('div');
+  div.className = 'review-card';
+  div.innerHTML = '<button class="review-remove" onclick="this.parentElement.remove()">✕</button><div class="review-card-header"><div class="review-avatar" style="background:'+color+'">'+initial+'</div><div><div class="review-name"><input type="text" placeholder="Reviewer name" style="border:none;background:none;font-size:13px;font-weight:500;width:100%;outline:none;" class="rv-name"/></div><div class="review-stars">★★★★★</div></div></div><textarea placeholder="Review text..." style="width:100%;border:none;background:none;font-size:13px;resize:none;outline:none;min-height:50px;" class="rv-text"></textarea>';
+  list.appendChild(div);
+}
+
+function addPhoto() {
+  var list = document.getElementById('photosList');
+  var n = list.querySelectorAll('.photo-url').length + 1;
+  var div = document.createElement('div');
+  div.className = 'form-group';
+  div.innerHTML = '<input type="url" class="photo-url" placeholder="https://..."/>';
+  list.appendChild(div);
+}
+
+// ── AUTO-FILL FROM MAPS ───────────────────────────────────────────────────────
+function fetchFromMaps() {
+  var url = document.getElementById('mapsUrl').value.trim();
+  var key = document.getElementById('apiKey').value.trim();
+  if (!url) { alert('Please paste a Google Maps URL first.'); return; }
+
+  // Extract query from URL - handle multiple Google Maps URL formats
+  var query = '';
+  var patterns = [
+    /place\/([^/@]+)/,
+    /q=([^&]+)/,
+    /search\/([^/@]+)/
+  ];
+  for (var i = 0; i < patterns.length; i++) {
+    var m = url.match(patterns[i]);
+    if (m) { query = decodeURIComponent(m[1].split('+').join(' ')); break; }
+  }
+  if (!query) {
+    alert('Paste the business name below manually — Google Maps URL format not recognised.');
+    return;
+  }
+
+  // Use Places API via script tag injection (avoids CORS)
+  var callbackName = 'gmCb_' + Date.now();
+  var script = document.createElement('script');
+  script.src = 'https://maps.googleapis.com/maps/api/place/findplacefromtext/json'
+    + '?input=' + encodeURIComponent(query)
+    + '&inputtype=textquery'
+    + '&fields=name,formatted_address,rating,user_ratings_total,formatted_phone_number,types'
+    + '&key=' + key
+    + '&callback=' + callbackName;
+
+  window[callbackName] = function(data) {
+    document.body.removeChild(script);
+    delete window[callbackName];
+    if (data && data.candidates && data.candidates[0]) {
+      var p = data.candidates[0];
+      if (p.name) document.getElementById('bizName').value = p.name;
+      if (p.formatted_address) document.getElementById('bizAddress').value = p.formatted_address;
+      if (p.rating) document.getElementById('bizRating').value = p.rating;
+      if (p.user_ratings_total) document.getElementById('bizReviewCount').value = p.user_ratings_total;
+      if (p.formatted_phone_number) document.getElementById('bizPhone').value = p.formatted_phone_number;
+      // Auto-detect category from types
+      if (p.types) {
+        var typeMap = {cafe:'cafe',restaurant:'restaurant',lodging:'resort',beauty_salon:'salon',
+          hair_care:'salon',gym:'fitness',doctor:'medical',hospital:'medical',store:'retail'};
+        for (var t in typeMap) {
+          if (p.types.indexOf(t) > -1) {
+            var pill = document.querySelector('[data-cat="'+typeMap[t]+'"]');
+            if (pill) selectCat(pill);
+            break;
+          }
+        }
+      }
+      alert('✓ Business details filled in! Check and edit if needed.');
+    } else {
+      alert('Business not found. Please fill in the details manually.');
+    }
+  };
+
+  script.onerror = function() {
+    alert('Auto-fill failed. Please fill in the details manually — the API may need Places API enabled.');
+  };
+
+  document.body.appendChild(script);
+}
+
+// ── COLLECT DATA ──────────────────────────────────────────────────────────────
+function collectData() {
+  var services = [];
+  document.querySelectorAll('.service-row').forEach(function(row){
+    var name = row.querySelector('.svc-name').value.trim();
+    var price = row.querySelector('.svc-price').value.trim();
+    if(name) services.push({name:name, price:price});
+  });
+  var reviews = [];
+  document.querySelectorAll('.review-card').forEach(function(card){
+    var name = card.querySelector('.rv-name').value.trim();
+    var text = card.querySelector('.rv-text').value.trim();
+    if(name || text) reviews.push({name:name||'Happy Customer', text:text||'Great experience!'});
+  });
+  var photos = [];
+  document.querySelectorAll('.photo-url').forEach(function(inp){
+    if(inp.value.trim()) photos.push(inp.value.trim());
+  });
+  return {
+    name: document.getElementById('bizName').value.trim() || 'Your Business',
+    city: document.getElementById('bizCity').value.trim(),
+    rating: document.getElementById('bizRating').value.trim() || '4.8',
+    reviewCount: document.getElementById('bizReviewCount').value.trim() || '100+',
+    phone: document.getElementById('bizPhone').value.trim(),
+    address: document.getElementById('bizAddress').value.trim(),
+    tagline: document.getElementById('bizTagline').value.trim(),
+    category: selectedCat,
+    services: services,
+    reviews: reviews,
+    photos: photos,
+  };
+}
+
+// ── THEME BY CATEGORY ─────────────────────────────────────────────────────────
+var themes = {
+  cafe:       {primary:'#2c1810', accent:'#8B4513', light:'#faf9f7', text:'#1a0a04', emoji:'☕', tagline:'Where every visit feels like home.', font:'Playfair Display'},
+  restaurant: {primary:'#1a1a2e', accent:'#c0392b', light:'#fdf8f5', text:'#1a1a2e', emoji:'🍽️', tagline:'Exceptional dining, every table.', font:'Cormorant Garamond'},
+  resort:     {primary:'#0d2b45', accent:'#1a6b8a', light:'#f0f7fa', text:'#0d2b45', emoji:'🏨', tagline:'Your perfect escape awaits.', font:'Libre Baskerville'},
+  salon:      {primary:'#2d1b33', accent:'#9b59b6', light:'#faf5ff', text:'#2d1b33', emoji:'💇', tagline:'Beauty is our craft.', font:'Cormorant Garamond'},
+  retail:     {primary:'#1a1a1a', accent:'#e67e22', light:'#fdf9f5', text:'#1a1a1a', emoji:'🛍️', tagline:'Quality you can count on.', font:'Playfair Display'},
+  fitness:    {primary:'#0a0a0a', accent:'#e74c3c', light:'#fff5f5', text:'#0a0a0a', emoji:'🏋️', tagline:'Push your limits.', font:'Oswald'},
+  medical:    {primary:'#0a2540', accent:'#00a86b', light:'#f0faf5', text:'#0a2540', emoji:'⚕️', tagline:'Your health, our priority.', font:'Libre Baskerville'},
+  other:      {primary:'#111110', accent:'#1a6b4a', light:'#f7f6f3', text:'#111110', emoji:'🏪', tagline:'Excellence in everything we do.', font:'Instrument Serif'},
+};
+
+// ── GENERATE DEMO HTML ────────────────────────────────────────────────────────
+function buildDemoHTML(d) {
+  var t = themes[d.category] || themes.other;
+  var slug = d.name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+  var demoUrl = 'vayumridul.com/demo/' + slug;
+
+  var servicesHtml = d.services.length > 0 ? d.services.map(function(s){
+    return '<div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(0,0,0,0.06);">'
+      +'<span style="font-size:15px;color:'+t.text+';">'+s.name+'</span>'
+      +'<span style="font-size:15px;font-weight:500;color:'+t.accent+';">'+s.price+'</span>'
+      +'</div>';
+  }).join('') : '<div style="padding:12px 0;color:#888;font-size:14px;">Menu coming soon</div>';
+
+  var reviewsHtml = d.reviews.length > 0 ? d.reviews.map(function(r,i){
+    var colors = ['#1a6b4a','#185fa5','#993c1d','#6b3a8a'];
+    var c = colors[i%colors.length];
+    var init = r.name.charAt(0).toUpperCase();
+    return '<div style="background:'+t.light+';border-radius:14px;padding:20px;border:1px solid rgba(0,0,0,0.06);">'
+      +'<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">'
+      +'<div style="width:38px;height:38px;border-radius:50%;background:'+c+';color:white;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:500;flex-shrink:0;">'+init+'</div>'
+      +'<div><p style="font-size:13px;font-weight:500;color:'+t.text+';">'+r.name+'</p><p style="color:#f5b731;font-size:12px;">★★★★★</p></div>'
+      +'</div>'
+      +'<p style="font-size:13px;color:#555;line-height:1.65;font-style:italic;">"'+r.text+'"</p>'
+      +'</div>';
+  }).join('') : '<div style="color:#888;font-size:14px;">Reviews loading...</div>';
+
+  var heroImg = d.photos[0] ? 'url('+d.photos[0]+')' : 'linear-gradient(135deg,'+t.primary+' 0%,'+t.accent+' 100%)';
+
+  var photoGridHtml = d.photos.length > 1 ? '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:1.5rem;">'
+    + d.photos.slice(1,4).map(function(url){
+        return '<img src="'+url+'" style="width:100%;height:140px;object-fit:cover;border-radius:10px;" onerror="this.style.display=\'none\'"/>';
+      }).join('')
+    + '</div>' : '';
+
+  return '<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="UTF-8"/>\n<meta name="viewport" content="width=device-width,initial-scale=1.0"/>\n<title>'+d.name+' — Professional Website Demo</title>\n<link href="https://fonts.googleapis.com/css2?family='+t.font.replace(/ /g,'+')+':ital,wght@0,400;0,500;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet"/>\n<style>\n*{box-sizing:border-box;margin:0;padding:0;}\nbody{font-family:\'DM Sans\',sans-serif;background:white;color:'+t.text+';-webkit-font-smoothing:antialiased;}\n.serif{font-family:\''+t.font+'\',Georgia,serif;}\n</style>\n</head>\n<body>\n\n<!-- DEMO BADGE -->\n<div style="background:'+t.primary+';color:white;text-align:center;padding:10px;font-size:12px;letter-spacing:0.05em;">🎉 This is a <strong>free demo</strong> built for '+d.name+' by <strong>VM Agency</strong> — vayumridul.com</div>\n\n<!-- NAV -->\n<nav style="background:rgba(255,255,255,0.95);padding:14px 24px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(0,0,0,0.07);position:sticky;top:0;z-index:100;">\n  <span class="serif" style="font-size:1.2rem;color:'+t.text+';">'+d.name+'</span>\n  <div style="display:flex;gap:16px;align-items:center;">\n    <span style="font-size:13px;color:#666;">Menu</span>\n    <span style="font-size:13px;color:#666;">About</span>\n    <span style="background:'+t.accent+';color:white;font-size:12px;padding:6px 14px;border-radius:6px;">Contact Us</span>\n  </div>\n</nav>\n\n<!-- HERO -->\n<div style="min-height:55vh;background:'+heroImg+';background-size:cover;background-position:center;display:flex;align-items:center;position:relative;overflow:hidden;">\n  <div style="position:absolute;inset:0;background:rgba(0,0,0,0.45);"></div>\n  <div style="position:relative;z-index:1;padding:3rem 2rem;max-width:700px;">\n    <div style="display:inline-block;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.85);letter-spacing:0.06em;margin-bottom:1rem;text-transform:uppercase;">'+d.city+(d.rating?' · ⭐ '+d.rating+' ('+d.reviewCount+' reviews)':'')+'</div>\n    <h1 class="serif" style="font-size:clamp(2rem,5vw,3.5rem);font-weight:400;color:white;line-height:1.12;margin-bottom:1rem;">'+d.name+'</h1>\n    <p style="font-size:1.05rem;color:rgba(255,255,255,0.8);max-width:480px;line-height:1.7;margin-bottom:1.5rem;">'+(d.tagline || t.tagline)+'</p>\n    <div style="display:flex;gap:12px;flex-wrap:wrap;">\n      <a href="tel:'+d.phone+'" style="background:white;color:'+t.text+';padding:10px 22px;border-radius:6px;font-size:14px;font-weight:500;text-decoration:none;">Call Now</a>\n      <span style="background:'+t.accent+';color:white;padding:10px 22px;border-radius:6px;font-size:14px;cursor:pointer;">View Menu</span>\n    </div>\n  </div>\n</div>\n\n<!-- STATS -->\n<div style="background:'+t.primary+';padding:1.5rem 2rem;display:flex;justify-content:space-around;flex-wrap:wrap;gap:1rem;">\n  <div style="text-align:center;"><p class="serif" style="font-size:1.8rem;color:white;">'+(d.rating||'4.8')+'★</p><p style="font-size:12px;color:rgba(255,255,255,0.5);">Google Rating</p></div>\n  <div style="text-align:center;"><p class="serif" style="font-size:1.8rem;color:white;">'+(d.reviewCount||'100+')+' </p><p style="font-size:12px;color:rgba(255,255,255,0.5);">Reviews</p></div>\n  <div style="text-align:center;"><p class="serif" style="font-size:1.8rem;color:white;">'+t.emoji+'</p><p style="font-size:12px;color:rgba(255,255,255,0.5);">'+d.city+'</p></div>\n</div>\n\n<!-- SERVICES/MENU -->\n<div style="padding:3rem 2rem;max-width:800px;margin:0 auto;">\n  <p style="font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#aaa;margin-bottom:0.5rem;">What we offer</p>\n  <h2 class="serif" style="font-size:2rem;font-weight:400;margin-bottom:2rem;color:'+t.text+';">Our Menu</h2>\n  '+servicesHtml+'\n  '+photoGridHtml+'\n</div>\n\n<!-- REVIEWS -->\n<div style="background:'+t.light+';padding:3rem 2rem;">\n  <div style="max-width:800px;margin:0 auto;">\n    <p style="font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#aaa;margin-bottom:0.5rem;">What our guests say</p>\n    <h2 class="serif" style="font-size:2rem;font-weight:400;margin-bottom:2rem;color:'+t.text+';">Customer Reviews</h2>\n    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;">\n      '+reviewsHtml+'\n    </div>\n  </div>\n</div>\n\n<!-- CONTACT -->\n<div style="padding:3rem 2rem;max-width:800px;margin:0 auto;">\n  <p style="font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#aaa;margin-bottom:0.5rem;">Get in touch</p>\n  <h2 class="serif" style="font-size:2rem;font-weight:400;margin-bottom:1.5rem;color:'+t.text+';">Visit Us</h2>\n  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;flex-wrap:wrap;">\n    <div>'+(d.address?'<p style="font-size:14px;color:#666;margin-bottom:0.5rem;">📍 '+d.address+'</p>':'')+(d.phone?'<p style="font-size:14px;color:#666;margin-bottom:1rem;">📞 '+d.phone+'</p>':'')+'<a href="tel:'+d.phone+'" style="background:'+t.accent+';color:white;padding:10px 20px;border-radius:6px;font-size:14px;text-decoration:none;display:inline-block;">Call to Book</a></div>\n    <div style="background:'+t.light+';border-radius:10px;height:150px;display:flex;align-items:center;justify-content:center;color:#aaa;font-size:13px;">📍 Map view</div>\n  </div>\n</div>\n\n<!-- FOOTER -->\n<div style="background:'+t.primary+';color:rgba(255,255,255,0.5);padding:2rem;text-align:center;">\n  <p class="serif" style="color:white;font-size:1.1rem;margin-bottom:0.5rem;">'+d.name+'</p>\n  <p style="font-size:12px;">'+d.city+'</p>\n  <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.1);">\n    <p style="font-size:11px;color:rgba(255,255,255,0.3);">Website built by <a href="https://vayumridul.com" style="color:rgba(255,255,255,0.5);">VM Agency</a> — vayumridul.com</p>\n  </div>\n</div>\n\n</body>\n</html>';
+}
+
+// ── GENERATE ──────────────────────────────────────────────────────────────────
+function generateDemo() {
+  bizData = collectData();
+  if(!bizData.name || bizData.name === 'Your Business') {
+    alert('Please enter the business name first.');
+    goStep(1); return;
+  }
+
+  document.getElementById('loadingBox').style.display = 'block';
+  document.getElementById('generatedContent').style.display = 'none';
+  document.getElementById('backBtn3').style.display = 'none';
+
+  setTimeout(function() {
+    generatedHTML = buildDemoHTML(bizData);
+    var slug = bizData.name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+    var demoUrl = 'vayumridul.com/demo/' + slug;
+
+    document.getElementById('demoLinkText').textContent = demoUrl;
+    document.getElementById('previewUrl').textContent = demoUrl;
+
+    // Load preview
+    var frame = document.getElementById('previewFrame');
+    var doc = frame.contentDocument || frame.contentWindow.document;
+    doc.open(); doc.write(generatedHTML); doc.close();
+
+    // Generate outreach
+    generateOutreach(bizData, demoUrl);
+
+    document.getElementById('loadingBox').style.display = 'none';
+    document.getElementById('generatedContent').style.display = 'block';
+    document.getElementById('backBtn3').style.display = 'none';
+  }, 1800);
+}
+
+var currentOutreach = 'whatsapp';
+function generateOutreach(d, url) {
+  var wa = 'Hi ' + d.name.split(' ')[0] + ' 👋\n\nWe came across ' + d.name + ' on Google — ' + d.rating + '★ with ' + d.reviewCount + ' reviews is genuinely impressive!\n\nWe noticed you don\'t have a website yet, so we went ahead and built you a free demo using your actual reviews and info:\n\n👉 ' + url + '\n\nNo commitment, no payment — just see what your business could look like online. If you love it, we can have it live in 48 hours starting at ₹15,999.\n\n— Mridul, VM Agency\n+91 870 8680800 | vayumridul.com';
+
+  var email = 'Subject: We built a free website demo for ' + d.name + '\n\nHi there,\n\nI came across ' + d.name + ' on Google Maps and was genuinely impressed — ' + d.rating + '★ across ' + d.reviewCount + ' reviews says a lot about the experience you deliver.\n\nWe noticed you don\'t have a website yet. Rather than just pitch you, we went ahead and built you a working demo using your real information:\n\n→ ' + url + '\n\nIt\'s completely free to view — no strings attached. If you like what you see, we can have a full professional website live within 48 hours, starting at ₹15,999.\n\nHappy to jump on a quick call if you have questions.\n\nWarm regards,\nMridul\nVM Agency | vayumridul.com\n+91 870 8680800';
+
+  document.getElementById('outreachMsg').textContent = currentOutreach === 'whatsapp' ? wa : email;
+  window._waMsg = wa; window._emailMsg = email;
+}
+
+function switchOutreach(type, btn) {
+  currentOutreach = type;
+  document.querySelectorAll('.otab').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.getElementById('outreachMsg').textContent = type === 'whatsapp' ? window._waMsg : window._emailMsg;
+}
+
+function copyOutreach() {
+  var msg = document.getElementById('outreachMsg').textContent;
+  navigator.clipboard.writeText(msg).then(function(){
+    var btn = document.querySelector('.copy-btn');
+    btn.textContent = '✓ Copied!';
+    setTimeout(function(){ btn.innerHTML = '📋 Copy message'; }, 2000);
+  });
+}
+
+function copyDemoLink() {
+  navigator.clipboard.writeText(document.getElementById('demoLinkText').textContent);
+}
+
+function openDemo() {
+  var w = window.open('', '_blank');
+  w.document.write(generatedHTML);
+  w.document.close();
+}
+
+function downloadDemo() {
+  var slug = bizData.name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+  var blob = new Blob([generatedHTML], {type:'text/html;charset=utf-8'});
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = slug + '.html';
+  a.style.display = 'none';
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(function() {
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }, 100);
+}
+
+function regenerate() { goStep(1); }
+</script>
+
+  </div>
+</div>
 <!-- CHATBOT BUBBLE -->
 <button class="chat-bubble" id="chatBubble" aria-label="Chat with us">
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -2949,13 +3533,13 @@ window.addEventListener('load', function() {
       <a href="about.html" style="font-size:13px;color:rgba(255,255,255,0.4);text-decoration:none;">About</a>
     </div>
     <div style="display:flex;gap:1rem;align-items:center;">
-      <a href="/cdn-cgi/l/email-protection#4129242d2d2e01372038342c332825342d6f222e2c" style="font-size:12px;color:rgba(255,255,255,0.3);text-decoration:none;display:flex;align-items:center;gap:5px;">
-        <span style="font-size:14px;">✉</span> <span class="__cf_email__" data-cfemail="365e535a5a597640574f435b445f52435a1855595b">[email&#160;protected]</span>
+      <a href="/cdn-cgi/l/email-protection#e088858c8c8fa0968199958d928984958cce838f8d" style="font-size:12px;color:rgba(255,255,255,0.3);text-decoration:none;display:flex;align-items:center;gap:5px;">
+        <span style="font-size:14px;">✉</span> <span class="__cf_email__" data-cfemail="640c0108080b2412051d1109160d0011084a070b09">[email&#160;protected]</span>
       </a>
       <span style="color:rgba(255,255,255,0.15);">·</span>
-      <a href="/cdn-cgi/l/email-protection#087e69717d657a616c7d64486f65696164266b6765" style="font-size:12px;color:rgba(255,255,255,0.2);text-decoration:none;"><span class="__cf_email__" data-cfemail="5721362e223a253e33223b17303a363e3b7934383a">[email&#160;protected]</span></a>
-    </div>
-  </div>
-  <div class="footer-links">
-    <a href="contact.html">Contact</a>
-    <a href="pricing.html">
+      <a href="/cdn-cgi/l/email-protection#1a6c7b636f7768737e6f765a7d777b737634797577" style="font-size:12px;color:rgba(255,255,255,0.2);text-decoration:none;"><s
+<footer>
+
+</footer>
+</body>
+</html>
