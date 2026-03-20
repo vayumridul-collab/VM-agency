@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#f0efec; display:flex; flex-direction:column; align-items:center; padding:60px 0; gap:48px; font-family:'DM Sans',sans-serif; }
+.section-label { font-size:11px; color:#aaa; letter-spacing:0.12em; text-transform:uppercase; }
+.row { display:flex; gap:32px; align-items:center; justify-content:center; flex-wrap:wrap; }
+
+/* LOGO SQUARE */
+.logo-square {
+  width:600px; height:600px;
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  border:1px solid rgba(0,0,0,0.06);
+}
+.logo-square.light { background:#f7f6f3; }
+.logo-square.dark  { background:#111110; }
+
+.logo-main { font-family:'Instrument Serif',Georgia,serif; font-size:120px; font-weight:400; letter-spacing:-2px; line-height:1; }
+.logo-main.on-light { color:#111110; }
+.logo-main.on-dark  { color:#ffffff; }
+.amp-green  { color:#1a6b4a; font-style:italic; }
+.logo-rule-green { width:240px; height:2px; background:#1a6b4a; margin:22px 0 18px; }
+.logo-tag { font-family:'DM Sans',sans-serif; font-size:16px; font-weight:400; letter-spacing:8px; color:#aaa; text-transform:uppercase; }
+.logo-url-light { font-family:'Instrument Serif',Georgia,serif; font-size:14px; color:#ccc; margin-top:10px; font-style:italic; }
+.logo-url-dark  { font-family:'Instrument Serif',Georgia,serif; font-size:14px; color:#444; margin-top:10px; font-style:italic; }
+
+/* FAVICON */
+.fav-dark {
+  width:160px; height:160px; background:#111110; border-radius:28px;
+  display:flex; align-items:center; justify-content:center;
+}
+.fav-light {
+  width:160px; height:160px; background:#f7f6f3; border-radius:28px;
+  border:2px solid #e0e0dc;
+  display:flex; align-items:center; justify-content:center;
+}
+.fav-text { font-family:'Instrument Serif',Georgia,serif; font-size:66px; letter-spacing:-2px; line-height:1; }
+.fav-text.on-dark  { color:white; }
+.fav-text.on-light { color:#111110; }
+
+/* FACEBOOK COVER */
+.fb-cover {
+  width:820px; height:312px;
+  display:flex; align-items:center; overflow:hidden; position:relative;
+}
+.fb-cover.dark-bg  { background:#111110; }
+.fb-cover.light-bg { background:#f7f6f3; border:1px solid #e8e8e4; }
+.fb-bar-dark  { width:5px; height:100%; background:#1a6b4a; flex-shrink:0; }
+.fb-bar-light { width:5px; height:100%; background:#1a6b4a; flex-shrink:0; }
+.fb-left { padding:0 36px; flex-shrink:0; }
+.fb-logo { font-family:'Instrument Serif',Georgia,serif; font-size:80px; line-height:1; letter-spacing:-2px; }
+.fb-logo.dark  { color:white; }
+.fb-logo.light { color:#111110; }
+.fb-rule { width:100%; height:1px; margin:10px 0 8px; }
+.fb-rule.dark  { background:#333; }
+.fb-rule.light { background:#ddd; }
+.fb-tag { font-family:'DM Sans',sans-serif; font-size:11px; letter-spacing:5px; color:#888; text-transform:uppercase; }
+.fb-divider { width:1px; height:150px; flex-shrink:0; }
+.fb-divider.dark  { background:#222; }
+.fb-divider.light { background:#e0e0dc; }
+.fb-right { padding:0 36px; flex:1; }
+.fb-rh { font-family:'Instrument Serif',Georgia,serif; font-size:22px; margin-bottom:6px; }
+.fb-rh.dark  { color:white; }
+.fb-rh.light { color:#111110; }
+.fb-rb { font-family:'DM Sans',sans-serif; font-size:12px; color:#888; line-height:1.9; }
+.fb-ru { font-family:'Instrument Serif',Georgia,serif; font-size:20px; color:#1a6b4a; font-style:italic; margin-top:10px; }
+
+/* YT COVER */
+.yt-cover {
+  width:820px; height:462px;
+  display:flex; align-items:center; overflow:hidden; position:relative;
+}
+.yt-cover.dark-bg  { background:#111110; }
+.yt-cover.light-bg { background:#f7f6f3; border:1px solid #e8e8e4; }
+.yt-bar { width:5px; height:100%; background:#1a6b4a; flex-shrink:0; }
+.yt-left { padding:0 44px; flex-shrink:0; width:300px; }
+.yt-logo { font-family:'Instrument Serif',Georgia,serif; font-size:110px; line-height:1; letter-spacing:-3px; }
+.yt-logo.dark  { color:white; }
+.yt-logo.light { color:#111110; }
+.yt-rule { width:100%; height:2px; margin:14px 0 10px; }
+.yt-rule.dark  { background:#333; }
+.yt-rule.light { background:#ddd; }
+.yt-tag { font-family:'DM Sans',sans-serif; font-size:12px; letter-spacing:6px; color:#888; text-transform:uppercase; }
+.yt-divider { width:1px; height:220px; flex-shrink:0; }
+.yt-divider.dark  { background:#222; }
+.yt-divider.light { background:#e0e0dc; }
+.yt-right { padding:0 44px; flex:1; }
+.yt-rh { font-family:'Instrument Serif',Georgia,serif; font-size:30px; margin-bottom:10px; line-height:1.2; }
+.yt-rh.dark  { color:white; }
+.yt-rh.light { color:#111110; }
+.yt-rb { font-family:'DM Sans',sans-serif; font-size:14px; color:#888; line-height:2; }
+.yt-ru { font-family:'Instrument Serif',Georgia,serif; font-size:26px; color:#1a6b4a; font-style:italic; margin-top:14px; }
+.yt-bottom { position:absolute; bottom:0; left:0; right:0; height:5px; background:#1a6b4a; }
+
+.instructions {
+  background:white; border:1px solid #e8e8e4; border-radius:12px;
+  padding:20px 28px; max-width:820px; width:100%;
+  font-size:13px; color:#666; line-height:1.8;
+}
+.instructions strong { color:#111; }
+code { background:#f5f5f5; padding:1px 5px; border-radius:4px; font-size:11px; }
+</style>
+</head>
+<body>
+
+<div class="instructions">
+  <strong>Export as PNG:</strong> Open in Chrome → Right-click any element → Inspect → Right-click the div in DevTools → <code>Capture node screenshot</code> → saves as perfect PNG. Scale up with browser zoom for higher resolution.
+</div>
+
+<!-- FAVICONS -->
+<p class="section-label">Favicon — Dark &amp; Light</p>
+<div class="row">
+  <div>
+    <p style="font-size:11px;color:#aaa;text-align:center;margin-bottom:8px;">Dark (default)</p>
+    <div class="fav-dark" id="favicon-dark">
+      <div class="fav-text on-dark">V<span class="amp-green">&</span>M</div>
+    </div>
+  </div>
+  <div>
+    <p style="font-size:11px;color:#aaa;text-align:center;margin-bottom:8px;">Light</p>
+    <div class="fav-light" id="favicon-light">
+      <div class="fav-text on-light">V<span class="amp-green">&</span>M</div>
+    </div>
+  </div>
+</div>
+
+<!-- LOGO SQUARES -->
+<p class="section-label">Logo Square — Dark &amp; Light</p>
+<div class="row">
+  <div class="logo-square dark" id="logo-dark">
+    <div class="logo-main on-dark">V<span class="amp-green">&</span>M</div>
+    <div class="logo-rule-green"></div>
+    <div class="logo-tag">Web Agency</div>
+    <div class="logo-url-dark">vmagency.co.in</div>
+  </div>
+  <div class="logo-square light" id="logo-light">
+    <div class="logo-main on-light">V<span class="amp-green">&</span>M</div>
+    <div class="logo-rule-green"></div>
+    <div class="logo-tag">Web Agency</div>
+    <div class="logo-url-light">vmagency.co.in</div>
+  </div>
+</div>
+
+<!-- FACEBOOK COVERS -->
+<p class="section-label">Facebook Cover — Dark &amp; Light</p>
+<div class="fb-cover dark-bg" id="fb-dark">
+  <div class="fb-bar-dark"></div>
+  <div class="fb-left">
+    <div class="fb-logo dark">V<span class="amp-green">&</span>M</div>
+    <div class="fb-rule dark"></div>
+    <div class="fb-tag">Web Agency</div>
+  </div>
+  <div class="fb-divider dark"></div>
+  <div class="fb-right">
+    <div class="fb-rh dark">Professional Websites</div>
+    <div class="fb-rb">SEO · AI Chatbots · Payment Gateways<br>48hr Delivery · 65+ Clients · Worldwide</div>
+    <div class="fb-ru">vmagency.co.in</div>
+  </div>
+</div>
+
+<div class="fb-cover light-bg" id="fb-light">
+  <div class="fb-bar-light"></div>
+  <div class="fb-left">
+    <div class="fb-logo light">V<span class="amp-green">&</span>M</div>
+    <div class="fb-rule light"></div>
+    <div class="fb-tag">Web Agency</div>
+  </div>
+  <div class="fb-divider light"></div>
+  <div class="fb-right">
+    <div class="fb-rh light">Professional Websites</div>
+    <div class="fb-rb">SEO · AI Chatbots · Payment Gateways<br>48hr Delivery · 65+ Clients · Worldwide</div>
+    <div class="fb-ru">vmagency.co.in</div>
+  </div>
+</div>
+
+<!-- YOUTUBE COVERS -->
+<p class="section-label">YouTube Cover — Dark &amp; Light</p>
+<div class="yt-cover dark-bg" id="yt-dark">
+  <div class="yt-bar"></div>
+  <div class="yt-left">
+    <div class="yt-logo dark">V<span class="amp-green">&</span>M</div>
+    <div class="yt-rule dark"></div>
+    <div class="yt-tag">Web Agency</div>
+  </div>
+  <div class="yt-divider dark"></div>
+  <div class="yt-right">
+    <div class="yt-rh dark">Professional Websites<br>for Ambitious Businesses.</div>
+    <div class="yt-rb">SEO · AI Chatbots · Payment Gateways<br>48hr Delivery · 65+ Clients · Worldwide</div>
+    <div class="yt-ru">vmagency.co.in</div>
+  </div>
+  <div class="yt-bottom"></div>
+</div>
+
+<div class="yt-cover light-bg" id="yt-light">
+  <div class="yt-bar"></div>
+  <div class="yt-left">
+    <div class="yt-logo light">V<span class="amp-green">&</span>M</div>
+    <div class="yt-rule light"></div>
+    <div class="yt-tag">Web Agency</div>
+  </div>
+  <div class="yt-divider light"></div>
+  <div class="yt-right">
+    <div class="yt-rh light">Professional Websites<br>for Ambitious Businesses.</div>
+    <div class="yt-rb">SEO · AI Chatbots · Payment Gateways<br>48hr Delivery · 65+ Clients · Worldwide</div>
+    <div class="yt-ru">vmagency.co.in</div>
+  </div>
+  <div class="yt-bottom"></div>
+</div>
+
+</body>
+</html>
