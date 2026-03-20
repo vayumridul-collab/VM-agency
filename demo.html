@@ -6,9 +6,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNyIgZmlsbD0iI2Y3ZjZmMyIvPgogIDxyZWN0IHg9IjAuNSIgeT0iMC41IiB3aWR0aD0iMzEiIGhlaWdodD0iMzEiIHJ4PSI2LjUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2UwZTBkYyIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgPHRleHQgeD0iNSIgeT0iMjQiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCdUaW1lcyBOZXcgUm9tYW4nLHNlcmlmIiBmb250LXNpemU9IjE5IiBmaWxsPSIjMTExMTEwIiBmb250LXdlaWdodD0iNDAwIiBsZXR0ZXItc3BhY2luZz0iLTEiPlY8L3RleHQ+CiAgPHRleHQgeD0iMTMiIHk9IjI0IiBmb250LWZhbWlseT0iR2VvcmdpYSwnVGltZXMgTmV3IFJvbWFuJyxzZXJpZiIgZm9udC1zaXplPSIxOSIgZmlsbD0iIzFhNmI0YSIgZm9udC1zdHlsZT0iaXRhbGljIj4mYW1wOzwvdGV4dD4KICA8dGV4dCB4PSIyMiIgeT0iMjQiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCdUaW1lcyBOZXcgUm9tYW4nLHNlcmlmIiBmb250LXNpemU9IjE5IiBmaWxsPSIjMTExMTEwIiBmb250LXdlaWdodD0iNDAwIiBsZXR0ZXItc3BhY2luZz0iLTEiPk08L3RleHQ+Cjwvc3ZnPg=="/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNyIgZmlsbD0iI2Y3ZjZmMyIvPgogIDxyZWN0IHg9IjAuNSIgeT0iMC41IiB3aWR0aD0iMzEiIGhlaWdodD0iMzEiIHJ4PSI2LjUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2UwZTBkYyIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgPHRleHQgeD0iMTYiIHk9IjIxIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSIxNSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzExMTExMCIgbGV0dGVyLXNwYWNpbmc9Ii0wLjUiPlY8dHNwYW4gZmlsbD0iIzFhNmI0YSIgZm9udC1zdHlsZT0iaXRhbGljIj4mYW1wOzwvdHNwYW4+TTwvdGV4dD4KPC9zdmc+"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Vayu & Mridul — Professional Website Building</title>
+<title>VM Agency — Web Design</title>
 <meta name="description" content="Vayu & Mridul — Delhi-based web design agency building professional websites for restaurants, cafes, resorts and businesses worldwide. Starting at ₹2,999 demo." />
 <meta name="keywords" content="website design India, professional website Delhi, cafe website, restaurant website, business website, affordable web design" />
 <meta property="og:title" content="Vayu & Mridul — Professional Website Building" />
@@ -713,22 +713,76 @@
     from { transform: scale(0); opacity: 0; }
     to   { transform: scale(1); opacity: 1; }
   }
-
-
-  /* VM BADGE */
-  .vm-badge {
-    position: fixed; top: 114px; right: 1.25rem;
-    background: var(--black); color: white;
-    font-size: 10px; font-weight: 600;
-    letter-spacing: 0.08em; text-transform: uppercase;
-    padding: 5px 12px; border-radius: 20px;
-    z-index: 99;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-    white-space: nowrap;
-    transition: background 0.2s;
-  }
-  .vm-badge:hover { background: var(--accent); }
   .vm-badge span { color: rgba(255,255,255,0.5); margin: 0 4px; }
+    to   { opacity:1; transform:translateY(0); }
+  }
+    40%     { transform:rotate(-5deg) scale(1.12); }
+    70%     { transform:rotate(3deg) scale(1.06); }
+  }
+  .nav-logo:hover em {
+    animation:none !important;
+    transform:scale(1.2) rotate(-8deg) !important;
+    transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1) !important;
+  }
+
+
+  /* AGENCY TAG */
+  .agency-tag {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-family: var(--sans); font-size: 10px; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--accent-mid);
+    background: var(--accent-light);
+    padding: 4px 10px; border-radius: 20px;
+    border: 1px solid rgba(26,107,74,0.15);
+    animation: navLogoIn 0.6s ease 0.3s both;
+  }
+  .agency-tag::before {
+    content: '';
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--accent);
+    animation: ctaPulse 2.5s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+
+
+  /* V&M LOGO ENTRANCE ANIMATION */
+  @keyframes vmSlideDown {
+    from { opacity:0; transform:translateY(-12px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+  @keyframes ampSpin {
+    0%   { opacity:0; transform:rotate(-30deg) scale(0.6); }
+    60%  { transform:rotate(6deg) scale(1.15); }
+    100% { opacity:1; transform:rotate(0deg) scale(1); }
+  }
+  @keyframes tagFadeIn {
+    from { opacity:0; transform:translateX(-6px); }
+    to   { opacity:1; transform:translateX(0); }
+  }
+  @keyframes dividerGrow {
+    from { transform:scaleY(0); opacity:0; }
+    to   { transform:scaleY(1); opacity:1; }
+  }
+  .logo-v {
+    display:inline-block;
+    animation:vmSlideDown 0.5s cubic-bezier(0.34,1.56,0.64,1) 0.1s both;
+  }
+  .logo-amp {
+    display:inline-block;
+    animation:ampSpin 0.6s cubic-bezier(0.34,1.56,0.64,1) 0.25s both;
+  }
+  .logo-m {
+    display:inline-block;
+    animation:vmSlideDown 0.5s cubic-bezier(0.34,1.56,0.64,1) 0.35s both;
+  }
+  .logo-divider {
+    animation:dividerGrow 0.4s ease 0.45s both;
+    transform-origin: center;
+  }
+  .logo-tag-wrap {
+    animation:tagFadeIn 0.5s ease 0.55s both;
+  }
 
   /* NAV */
   nav {
@@ -2407,7 +2461,7 @@ body{font-family:var(--sans);background:var(--gray);color:var(--black);min-heigh
   }
 
 </style>
-<title>Free Demo — Vayu & Mridul</title>
+<title>VM Agency — Web Design</title>
 </head>
 <body>
 <div class="scroll-progress" id="scrollProgress"></div>
@@ -2417,7 +2471,7 @@ body{font-family:var(--sans);background:var(--gray);color:var(--black);min-heigh
       🎉&nbsp;<strong>Sale is live!</strong>&nbsp;— Prices start at ₹15,999 only &nbsp;&nbsp;·&nbsp;&nbsp; 🎉&nbsp;<strong>Sale is live!</strong>&nbsp;— Prices start at ₹15,999 only &nbsp;&nbsp;·&nbsp;&nbsp; 🎉&nbsp;<strong>Sale is live!</strong>&nbsp;— Prices start at ₹15,999 only &nbsp;&nbsp;·&nbsp;&nbsp; 🎉&nbsp;<strong>Sale is live!</strong>&nbsp;— Prices start at ₹15,999 only &nbsp;&nbsp;·&nbsp;&nbsp;
     </span>
   </div>
-  <button onclick="document.getElementById('saleBanner').style.display='none';document.querySelector('nav').style.top='0';var vb=document.querySelector('.vm-badge');if(vb)vb.style.top='72px';" style="flex-shrink:0;background:none;border:none;color:rgba(255,255,255,0.7);cursor:pointer;font-size:16px;padding:0 12px;line-height:1;">✕</button>
+  <button onclick="document.getElementById('saleBanner').style.display='none';document.querySelector('nav').style.top='0';" style="flex-shrink:0;background:none;border:none;color:rgba(255,255,255,0.7);cursor:pointer;font-size:16px;padding:0 12px;line-height:1;">✕</button>
 </div>
 <style>
 @keyframes bannerScroll {
@@ -2426,12 +2480,12 @@ body{font-family:var(--sans);background:var(--gray);color:var(--black);min-heigh
 }
 </style>
 <nav>
-  <a class="nav-logo" href="index.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;">
-    <span style="font-family:'Instrument Serif',Georgia,serif;font-size:1.6rem;font-weight:400;color:#111110;letter-spacing:-0.02em;line-height:1;">V<em style="font-style:italic;color:#1a6b4a;font-family:'Instrument Serif',Georgia,serif;">&amp;</em>M</span>
-    <span style="width:1px;height:28px;background:#ddd;display:inline-block;flex-shrink:0;"></span>
-    <span style="display:flex;flex-direction:column;gap:2px;">
-      <span style="font-family:'DM Sans',sans-serif;font-size:8px;font-weight:500;letter-spacing:0.22em;color:#aaa;text-transform:uppercase;line-height:1;">Web</span>
-      <span style="font-family:'DM Sans',sans-serif;font-size:8px;font-weight:500;letter-spacing:0.18em;color:#aaa;text-transform:uppercase;line-height:1;">Agency</span>
+  <a class="nav-logo" href="index.html" style="display:flex;align-items:center;gap:0;text-decoration:none;">
+    <span style="font-family:'Instrument Serif',Georgia,serif;font-size:2.1rem;font-weight:400;color:#111110;letter-spacing:-0.02em;line-height:1;"><span class="logo-v">V</span><em class="logo-amp" style="font-style:italic;color:#1a6b4a;">&amp;</em><span class="logo-m">M</span></span>
+    <span class="logo-divider" style="width:1px;height:34px;background:#ddd;display:inline-block;flex-shrink:0;margin:0 10px;"></span>
+    <span class="logo-tag-wrap" style="display:flex;flex-direction:column;gap:2px;">
+      <span style="font-family:'DM Sans',sans-serif;font-size:9.5px;font-weight:500;letter-spacing:0.22em;color:#aaa;text-transform:uppercase;line-height:1;">Web</span>
+      <span style="font-family:'DM Sans',sans-serif;font-size:9.5px;font-weight:500;letter-spacing:0.18em;color:#aaa;text-transform:uppercase;line-height:1;">Agency</span>
     </span>
   </a>
   <ul class="nav-links">
@@ -2442,13 +2496,13 @@ body{font-family:var(--sans);background:var(--gray);color:var(--black);min-heigh
     <li><a href="about.html">About</a></li>
     <li><a href="faq.html">FAQ</a></li>
     <li><a href="demo.html" style="color:var(--accent);">Free Demo ✦</a></li>
+    <li><span class="agency-tag">Web Design</span></li>
     <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
-<div class="vm-badge">VM Agency</div>
 <div class="mobile-menu" id="mobile-menu">
   <a href="index.html" onclick="closeMobile()">Home</a>
   <a href="index.html#services" onclick="closeMobile()">Services</a>
@@ -2910,8 +2964,8 @@ function buildDemoHTML(d) {
       }).join('')
     + '</div>' : '';
 
-  return '<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="UTF-8"/>\n<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNyIgZmlsbD0iI2Y3ZjZmMyIvPgogIDxyZWN0IHg9IjAuNSIgeT0iMC41IiB3aWR0aD0iMzEiIGhlaWdodD0iMzEiIHJ4PSI2LjUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2UwZTBkYyIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgPHRleHQgeD0iNSIgeT0iMjQiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCdUaW1lcyBOZXcgUm9tYW4nLHNlcmlmIiBmb250LXNpemU9IjE5IiBmaWxsPSIjMTExMTEwIiBmb250LXdlaWdodD0iNDAwIiBsZXR0ZXItc3BhY2luZz0iLTEiPlY8L3RleHQ+CiAgPHRleHQgeD0iMTMiIHk9IjI0IiBmb250LWZhbWlseT0iR2VvcmdpYSwnVGltZXMgTmV3IFJvbWFuJyxzZXJpZiIgZm9udC1zaXplPSIxOSIgZmlsbD0iIzFhNmI0YSIgZm9udC1zdHlsZT0iaXRhbGljIj4mYW1wOzwvdGV4dD4KICA8dGV4dCB4PSIyMiIgeT0iMjQiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCdUaW1lcyBOZXcgUm9tYW4nLHNlcmlmIiBmb250LXNpemU9IjE5IiBmaWxsPSIjMTExMTEwIiBmb250LXdlaWdodD0iNDAwIiBsZXR0ZXItc3BhY2luZz0iLTEiPk08L3RleHQ+Cjwvc3ZnPg=="/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>\n<title>'+d.name+' — Professional Website Demo</title>\n<link href="https://fonts.googleapis.com/css2?family='+t.font.replace(/ /g,'+')+':ital,wght@0,400;0,500;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet"/>\n<style>\n*{box-sizing:border-box;margin:0;padding:0;}\nbody{font-family:\'DM Sans\',sans-serif;background:white;color:'+t.text+';-webkit-font-smoothing:antialiased;}\n.serif{font-family:\''+t.font+'\',Georgia,serif;}\n</style>\n</head>\n<body>\n\n<!-- DEMO BADGE -->\n<div style="background:'+t.primary+';color:white;text-align:center;padding:10px;font-size:12px;letter-spacing:0.05em;">🎉 This is a <strong>free demo</strong> built for '+d.name+' by <strong>VM Agency</strong> — vmagency.co.in</div>\n\n<!-- NAV -->\n<nav style="background:rgba(255,255,255,0.95);padding:14px 24px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(0,0,0,0.07);position:sticky;top:0;z-index:100;">\n  <span class="serif" style="font-size:1.2rem;color:'+t.text+';">'+d.name+'</span>\n  <div style="display:flex;gap:16px;align-items:center;">\n    <span style="font-size:13px;color:#666;">Menu</span>\n    <span style="font-size:13px;color:#666;">About</span>\n    <span style="background:'+t.accent+';color:white;font-size:12px;padding:6px 14px;border-radius:6px;">Contact Us</span>\n  </div>\n</nav>\n\n<!-- HERO -->\n<div style="min-height:55vh;background:'+heroImg+';background-size:cover;background-position:center;display:flex;align-items:center;position:relative;overflow:hidden;">\n  <div style="position:absolute;inset:0;background:rgba(0,0,0,0.45);"></div>\n  <div style="position:relative;z-index:1;padding:3rem 2rem;max-width:700px;">\n    <div style="display:inline-block;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.85);letter-spacing:0.06em;margin-bottom:1rem;text-transform:uppercase;">'+d.city+(d.rating?' · ⭐ '+d.rating+' ('+d.reviewCount+' reviews)':'')+'</div>\n    <h1 class="serif" style="font-size:clamp(2rem,5vw,3.5rem);font-weight:400;color:white;line-height:1.12;margin-bottom:1rem;">'+d.name+'</h1>\n    <p style="font-size:1.05rem;color:rgba(255,255,255,0.8);max-width:480px;line-height:1.7;margin-bottom:1.5rem;">'+(d.tagline || t.tagline)+'</p>\n    <div style="display:flex;gap:12px;flex-wrap:wrap;">\n      <a href="tel:'+d.phone+'" style="background:white;color:'+t.text+';padding:10px 22px;border-radius:6px;font-size:14px;font-weight:500;text-decoration:none;">Call Now</a>\n      <span style="background:'+t.accent+';color:white;padding:10px 22px;border-radius:6px;font-size:14px;cursor:pointer;">View Menu</span>\n    </div>\n  </div>\n</div>\n\n<!-- STATS -->\n<div style="background:'+t.primary+';padding:1.5rem 2rem;display:flex;justify-content:space-around;flex-wrap:wrap;gap:1rem;">\n  <div style="text-align:center;"><p class="serif" style="font-size:1.8rem;color:white;">'+(d.rating||'4.8')+'★</p><p style="font-size:12px;color:rgba(255,255,255,0.5);">Google Rating</p></div>\n  <div style="text-align:center;"><p class="serif" style="font-size:1.8rem;color:white;">'+(d.reviewCount||'100+')+' </p><p style="font-size:12px;color:rgba(255,255,255,0.5);">Reviews</p></div>\n  <div style="text-align:center;"><p class="serif" style="font-size:1.8rem;color:white;">'+t.emoji+'</p><p style="font-size:12px;color:rgba(255,255,255,0.5);">'+d.city+'</p></div>\n</div>\n\n<!-- SERVICES/MENU -->\n<div style="padding:3rem 2rem;max-width:800px;margin:0 auto;">\n  <p style="font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#aaa;margin-bottom:0.5rem;">What we offer</p>\n  <h2 class="serif" style="font-size:2rem;font-weight:400;margin-bottom:2rem;color:'+t.text+';">Our Menu</h2>\n  '+servicesHtml+'\n  '+photoGridHtml+'\n</div>\n\n<!-- REVIEWS -->\n<div style="background:'+t.light+';padding:3rem 2rem;">\n  <div style="max-width:800px;margin:0 auto;">\n    <p style="font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#aaa;margin-bottom:0.5rem;">What our guests say</p>\n    <h2 class="serif" style="font-size:2rem;font-weight:400;margin-bottom:2rem;color:'+t.text+';">Customer Reviews</h2>\n    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;">\n      '+reviewsHtml+'\n    </div>\n  </div>\n</div>\n\n<!-- CONTACT -->\n<div style="padding:3rem 2rem;max-width:800px;margin:0 auto;">\n  <p style="font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#aaa;margin-bottom:0.5rem;">Get in touch</p>\n  <h2 class="serif" style="font-size:2rem;font-weight:400;margin-bottom:1.5rem;color:'+t.text+';">Visit Us</h2>\n  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;flex-wrap:wrap;">\n    <div>'+(d.address?'<p style="font-size:14px;color:#666;margin-bottom:0.5rem;">📍 '+d.address+'</p>':'')+(d.phone?'<p style="font-size:14px;color:#666;margin-bottom:1rem;">📞 '+d.phone+'</p>':'')+'<a href="tel:'+d.phone+'" style="background:'+t.accent+';color:white;padding:10px 20px;border-radius:6px;font-size:14px;text-decoration:none;display:inline-block;">Call to Book</a></div>\n    <div style="background:'+t.light+';border-radius:10px;height:150px;display:flex;align-items:center;justify-content:center;color:#aaa;font-size:13px;">📍 Map view</div>\n  </div>\n</div>\n\n<!-- FOOTER -->\n<div style="background:'+t.primary+';color:rgba(255,255,255,0.5);padding:2rem;text-align:center;">\n  <p class="serif" style="color:white;font-size:1.1rem;margin-bottom:0.5rem;">'+d.name+'</p>\n  <p style="font-size:12px;">'+d.city+'</p>\n  <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.1);">\n    <p style="font-size:11px;color:rgba(255,255,255,0.3);">Website built by <a href="https://vmagency.co.in" style="color:rgba(255,255,255,0.5);">VM Agency</a> — vmagency.co.in</p>\n  </div>\n</div>\n\n</body>\n</html>';
+  return '<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="UTF-8"/>\n<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNyIgZmlsbD0iI2Y3ZjZmMyIvPgogIDxyZWN0IHg9IjAuNSIgeT0iMC41IiB3aWR0aD0iMzEiIGhlaWdodD0iMzEiIHJ4PSI2LjUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2UwZTBkYyIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgPHRleHQgeD0iMTYiIHk9IjIxIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSIxNSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzExMTExMCIgbGV0dGVyLXNwYWNpbmc9Ii0wLjUiPlY8dHNwYW4gZmlsbD0iIzFhNmI0YSIgZm9udC1zdHlsZT0iaXRhbGljIj4mYW1wOzwvdHNwYW4+TTwvdGV4dD4KPC9zdmc+"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>\n<title>VM Agency — Web Design</title>\n<link href="https://fonts.googleapis.com/css2?family='+t.font.replace(/ /g,'+')+':ital,wght@0,400;0,500;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet"/>\n<style>\n*{box-sizing:border-box;margin:0;padding:0;}\nbody{font-family:\'DM Sans\',sans-serif;background:white;color:'+t.text+';-webkit-font-smoothing:antialiased;}\n.serif{font-family:\''+t.font+'\',Georgia,serif;}\n</style>\n</head>\n<body>\n\n<!-- DEMO BADGE -->\n<div style="background:'+t.primary+';color:white;text-align:center;padding:10px;font-size:12px;letter-spacing:0.05em;">🎉 This is a <strong>free demo</strong> built for '+d.name+' by <strong>VM Agency</strong> — vmagency.co.in</div>\n\n<!-- NAV -->\n<nav style="background:rgba(255,255,255,0.95);padding:14px 24px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(0,0,0,0.07);position:sticky;top:0;z-index:100;">\n  <span class="serif" style="font-size:1.2rem;color:'+t.text+';">'+d.name+'</span>\n  <div style="display:flex;gap:16px;align-items:center;">\n    <span style="font-size:13px;color:#666;">Menu</span>\n    <span style="font-size:13px;color:#666;">About</span>\n    <span style="background:'+t.accent+';color:white;font-size:12px;padding:6px 14px;border-radius:6px;">Contact Us</span>\n  </div>\n</nav>\n\n<!-- HERO -->\n<div style="min-height:55vh;background:'+heroImg+';background-size:cover;background-position:center;display:flex;align-items:center;position:relative;overflow:hidden;">\n  <div style="position:absolute;inset:0;background:rgba(0,0,0,0.45);"></div>\n  <div style="position:relative;z-index:1;padding:3rem 2rem;max-width:700px;">\n    <div style="display:inline-block;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.85);letter-spacing:0.06em;margin-bottom:1rem;text-transform:uppercase;">'+d.city+(d.rating?' · ⭐ '+d.rating+' ('+d.reviewCount+' reviews)':'')+'</div>\n    <h1 class="serif" style="font-size:clamp(2rem,5vw,3.5rem);font-weight:400;color:white;line-height:1.12;margin-bottom:1rem;">'+d.name+'</h1>\n    <p style="font-size:1.05rem;color:rgba(255,255,255,0.8);max-width:480px;line-height:1.7;margin-bottom:1.5rem;">'+(d.tagline || t.tagline)+'</p>\n    <div style="display:flex;gap:12px;flex-wrap:wrap;">\n      <a href="tel:'+d.phone+'" style="background:white;color:'+t.text+';padding:10px 22px;border-radius:6px;font-size:14px;font-weight:500;text-decoration:none;">Call Now</a>\n      <span style="background:'+t.accent+';color:white;padding:10px 22px;border-radius:6px;font-size:14px;cursor:pointer;">View Menu</span>\n    </div>\n  </div>\n</div>\n\n<!-- STATS -->\n<div style="background:'+t.primary+';padding:1.5rem 2rem;display:flex;justify-content:space-around;flex-wrap:wrap;gap:1rem;">\n  <div style="text-align:center;"><p class="serif" style="font-size:1.8rem;color:white;">'+(d.rating||'4.8')+'★</p><p style="font-size:12px;color:rgba(255,255,255,0.5);">Google Rating</p></div>\n  <div style="text-align:center;"><p class="serif" style="font-size:1.8rem;color:white;">'+(d.reviewCount||'100+')+' </p><p style="font-size:12px;color:rgba(255,255,255,0.5);">Reviews</p></div>\n  <div style="text-align:center;"><p class="serif" style="font-size:1.8rem;color:white;">'+t.emoji+'</p><p style="font-size:12px;color:rgba(255,255,255,0.5);">'+d.city+'</p></div>\n</div>\n\n<!-- SERVICES/MENU -->\n<div style="padding:3rem 2rem;max-width:800px;margin:0 auto;">\n  <p style="font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#aaa;margin-bottom:0.5rem;">What we offer</p>\n  <h2 class="serif" style="font-size:2rem;font-weight:400;margin-bottom:2rem;color:'+t.text+';">Our Menu</h2>\n  '+servicesHtml+'\n  '+photoGridHtml+'\n</div>\n\n<!-- REVIEWS -->\n<div style="background:'+t.light+';padding:3rem 2rem;">\n  <div style="max-width:800px;margin:0 auto;">\n    <p style="font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#aaa;margin-bottom:0.5rem;">What our guests say</p>\n    <h2 class="serif" style="font-size:2rem;font-weight:400;margin-bottom:2rem;color:'+t.text+';">Customer Reviews</h2>\n    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;">\n      '+reviewsHtml+'\n    </div>\n  </div>\n</div>\n\n<!-- CONTACT -->\n<div style="padding:3rem 2rem;max-width:800px;margin:0 auto;">\n  <p style="font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#aaa;margin-bottom:0.5rem;">Get in touch</p>\n  <h2 class="serif" style="font-size:2rem;font-weight:400;margin-bottom:1.5rem;color:'+t.text+';">Visit Us</h2>\n  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;flex-wrap:wrap;">\n    <div>'+(d.address?'<p style="font-size:14px;color:#666;margin-bottom:0.5rem;">📍 '+d.address+'</p>':'')+(d.phone?'<p style="font-size:14px;color:#666;margin-bottom:1rem;">📞 '+d.phone+'</p>':'')+'<a href="tel:'+d.phone+'" style="background:'+t.accent+';color:white;padding:10px 20px;border-radius:6px;font-size:14px;text-decoration:none;display:inline-block;">Call to Book</a></div>\n    <div style="background:'+t.light+';border-radius:10px;height:150px;display:flex;align-items:center;justify-content:center;color:#aaa;font-size:13px;">📍 Map view</div>\n  </div>\n</div>\n\n<!-- FOOTER -->\n<div style="background:'+t.primary+';color:rgba(255,255,255,0.5);padding:2rem;text-align:center;">\n  <p class="serif" style="color:white;font-size:1.1rem;margin-bottom:0.5rem;">'+d.name+'</p>\n  <p style="font-size:12px;">'+d.city+'</p>\n  <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.1);">\n    <p style="font-size:11px;color:rgba(255,255,255,0.3);">Website built by <a href="https://vmagency.co.in" style="color:rgba(255,255,255,0.5);">VM Agency</a> — vmagency.co.in</p>\n  </div>\n</div>\n\n</body>\n</html>';
 }
 
 // ── GENERATE ──────────────────────────────────────────────────────────────────
@@ -3727,7 +3781,7 @@ window.addEventListener('load', function() {
     </div>
     <div style="display:flex;gap:1rem;align-items:center;">
       <a href="/cdn-cgi/l/email-protection#e088858c8c8fa0968199958d928984958cce838f8d" style="font-size:12px;color:rgba(255,255,255,0.3);text-decoration:none;display:flex;align-items:center;gap:5px;">
-        <span style="font-size:14px;">✉</span> <span class="__cf_email__" data-cfemail="640c0108080b2412051d1109160d0011084a070b09">[email&#160;protected]</span>
+        <span style="font-size:14px;">✉</span> hello&#64;vayumridul&#46;com
       </a>
       <span style="color:rgba(255,255,255,0.15);">·</span>
       <a href="/cdn-cgi/l/email-protection#1a6c7b636f7768737e6f765a7d777b737634797577" style="font-size:12px;color:rgba(255,255,255,0.2);text-decoration:none;"><s

@@ -4,9 +4,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNyIgZmlsbD0iI2Y3ZjZmMyIvPgogIDxyZWN0IHg9IjAuNSIgeT0iMC41IiB3aWR0aD0iMzEiIGhlaWdodD0iMzEiIHJ4PSI2LjUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2UwZTBkYyIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgPHRleHQgeD0iNSIgeT0iMjQiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCdUaW1lcyBOZXcgUm9tYW4nLHNlcmlmIiBmb250LXNpemU9IjE5IiBmaWxsPSIjMTExMTEwIiBmb250LXdlaWdodD0iNDAwIiBsZXR0ZXItc3BhY2luZz0iLTEiPlY8L3RleHQ+CiAgPHRleHQgeD0iMTMiIHk9IjI0IiBmb250LWZhbWlseT0iR2VvcmdpYSwnVGltZXMgTmV3IFJvbWFuJyxzZXJpZiIgZm9udC1zaXplPSIxOSIgZmlsbD0iIzFhNmI0YSIgZm9udC1zdHlsZT0iaXRhbGljIj4mYW1wOzwvdGV4dD4KICA8dGV4dCB4PSIyMiIgeT0iMjQiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCdUaW1lcyBOZXcgUm9tYW4nLHNlcmlmIiBmb250LXNpemU9IjE5IiBmaWxsPSIjMTExMTEwIiBmb250LXdlaWdodD0iNDAwIiBsZXR0ZXItc3BhY2luZz0iLTEiPk08L3RleHQ+Cjwvc3ZnPg=="/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNyIgZmlsbD0iI2Y3ZjZmMyIvPgogIDxyZWN0IHg9IjAuNSIgeT0iMC41IiB3aWR0aD0iMzEiIGhlaWdodD0iMzEiIHJ4PSI2LjUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2UwZTBkYyIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgPHRleHQgeD0iMTYiIHk9IjIxIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSIxNSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzExMTExMCIgbGV0dGVyLXNwYWNpbmc9Ii0wLjUiPlY8dHNwYW4gZmlsbD0iIzFhNmI0YSIgZm9udC1zdHlsZT0iaXRhbGljIj4mYW1wOzwvdHNwYW4+TTwvdGV4dD4KPC9zdmc+"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Vayu & Mridul — Professional Website Building</title>
+<title>VM Agency — Web Design</title>
 <meta name="description" content="Vayu & Mridul — Delhi-based web design agency building professional websites for restaurants, cafes, resorts and businesses worldwide. Starting at ₹2,999 demo." />
 <meta name="keywords" content="website design India, professional website Delhi, cafe website, restaurant website, business website, affordable web design" />
 <meta property="og:title" content="Vayu & Mridul — Professional Website Building" />
@@ -711,22 +711,76 @@
     from { transform: scale(0); opacity: 0; }
     to   { transform: scale(1); opacity: 1; }
   }
-
-
-  /* VM BADGE */
-  .vm-badge {
-    position: fixed; top: 114px; right: 1.25rem;
-    background: var(--black); color: white;
-    font-size: 10px; font-weight: 600;
-    letter-spacing: 0.08em; text-transform: uppercase;
-    padding: 5px 12px; border-radius: 20px;
-    z-index: 99;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-    white-space: nowrap;
-    transition: background 0.2s;
-  }
-  .vm-badge:hover { background: var(--accent); }
   .vm-badge span { color: rgba(255,255,255,0.5); margin: 0 4px; }
+    to   { opacity:1; transform:translateY(0); }
+  }
+    40%     { transform:rotate(-5deg) scale(1.12); }
+    70%     { transform:rotate(3deg) scale(1.06); }
+  }
+  .nav-logo:hover em {
+    animation:none !important;
+    transform:scale(1.2) rotate(-8deg) !important;
+    transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1) !important;
+  }
+
+
+  /* AGENCY TAG */
+  .agency-tag {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-family: var(--sans); font-size: 10px; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--accent-mid);
+    background: var(--accent-light);
+    padding: 4px 10px; border-radius: 20px;
+    border: 1px solid rgba(26,107,74,0.15);
+    animation: navLogoIn 0.6s ease 0.3s both;
+  }
+  .agency-tag::before {
+    content: '';
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--accent);
+    animation: ctaPulse 2.5s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+
+
+  /* V&M LOGO ENTRANCE ANIMATION */
+  @keyframes vmSlideDown {
+    from { opacity:0; transform:translateY(-12px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+  @keyframes ampSpin {
+    0%   { opacity:0; transform:rotate(-30deg) scale(0.6); }
+    60%  { transform:rotate(6deg) scale(1.15); }
+    100% { opacity:1; transform:rotate(0deg) scale(1); }
+  }
+  @keyframes tagFadeIn {
+    from { opacity:0; transform:translateX(-6px); }
+    to   { opacity:1; transform:translateX(0); }
+  }
+  @keyframes dividerGrow {
+    from { transform:scaleY(0); opacity:0; }
+    to   { transform:scaleY(1); opacity:1; }
+  }
+  .logo-v {
+    display:inline-block;
+    animation:vmSlideDown 0.5s cubic-bezier(0.34,1.56,0.64,1) 0.1s both;
+  }
+  .logo-amp {
+    display:inline-block;
+    animation:ampSpin 0.6s cubic-bezier(0.34,1.56,0.64,1) 0.25s both;
+  }
+  .logo-m {
+    display:inline-block;
+    animation:vmSlideDown 0.5s cubic-bezier(0.34,1.56,0.64,1) 0.35s both;
+  }
+  .logo-divider {
+    animation:dividerGrow 0.4s ease 0.45s both;
+    transform-origin: center;
+  }
+  .logo-tag-wrap {
+    animation:tagFadeIn 0.5s ease 0.55s both;
+  }
 
   /* NAV */
   nav {
@@ -2087,7 +2141,7 @@
   .checkout-success h2 { font-family: var(--serif); font-size: 1.8rem; font-weight: 400; margin-bottom: 0.75rem; }
   .checkout-success p { font-size: 14px; color: var(--gray-dark); max-width: 400px; margin: 0 auto 2rem; line-height: 1.7; }
 </style>
-<title>Contact — Vayu & Mridul</title>
+<title>VM Agency — Web Design</title>
 </head>
 <body>
 <div class="scroll-progress" id="scrollProgress"></div>
@@ -2097,7 +2151,7 @@
       🎉&nbsp;<strong>Sale is live!</strong>&nbsp;— Prices start at ₹15,999 only &nbsp;&nbsp;·&nbsp;&nbsp; 🎉&nbsp;<strong>Sale is live!</strong>&nbsp;— Prices start at ₹15,999 only &nbsp;&nbsp;·&nbsp;&nbsp; 🎉&nbsp;<strong>Sale is live!</strong>&nbsp;— Prices start at ₹15,999 only &nbsp;&nbsp;·&nbsp;&nbsp; 🎉&nbsp;<strong>Sale is live!</strong>&nbsp;— Prices start at ₹15,999 only &nbsp;&nbsp;·&nbsp;&nbsp;
     </span>
   </div>
-  <button onclick="document.getElementById('saleBanner').style.display='none';document.querySelector('nav').style.top='0';var vb=document.querySelector('.vm-badge');if(vb)vb.style.top='72px';" style="flex-shrink:0;background:none;border:none;color:rgba(255,255,255,0.7);cursor:pointer;font-size:16px;padding:0 12px;line-height:1;">✕</button>
+  <button onclick="document.getElementById('saleBanner').style.display='none';document.querySelector('nav').style.top='0';" style="flex-shrink:0;background:none;border:none;color:rgba(255,255,255,0.7);cursor:pointer;font-size:16px;padding:0 12px;line-height:1;">✕</button>
 </div>
 <style>
 @keyframes bannerScroll {
@@ -2106,12 +2160,12 @@
 }
 </style>
 <nav>
-  <a class="nav-logo" href="index.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;">
-    <span style="font-family:'Instrument Serif',Georgia,serif;font-size:1.6rem;font-weight:400;color:#111110;letter-spacing:-0.02em;line-height:1;">V<em style="font-style:italic;color:#1a6b4a;font-family:'Instrument Serif',Georgia,serif;">&amp;</em>M</span>
-    <span style="width:1px;height:28px;background:#ddd;display:inline-block;flex-shrink:0;"></span>
-    <span style="display:flex;flex-direction:column;gap:2px;">
-      <span style="font-family:'DM Sans',sans-serif;font-size:8px;font-weight:500;letter-spacing:0.22em;color:#aaa;text-transform:uppercase;line-height:1;">Web</span>
-      <span style="font-family:'DM Sans',sans-serif;font-size:8px;font-weight:500;letter-spacing:0.18em;color:#aaa;text-transform:uppercase;line-height:1;">Agency</span>
+  <a class="nav-logo" href="index.html" style="display:flex;align-items:center;gap:0;text-decoration:none;">
+    <span style="font-family:'Instrument Serif',Georgia,serif;font-size:2.1rem;font-weight:400;color:#111110;letter-spacing:-0.02em;line-height:1;"><span class="logo-v">V</span><em class="logo-amp" style="font-style:italic;color:#1a6b4a;">&amp;</em><span class="logo-m">M</span></span>
+    <span class="logo-divider" style="width:1px;height:34px;background:#ddd;display:inline-block;flex-shrink:0;margin:0 10px;"></span>
+    <span class="logo-tag-wrap" style="display:flex;flex-direction:column;gap:2px;">
+      <span style="font-family:'DM Sans',sans-serif;font-size:9.5px;font-weight:500;letter-spacing:0.22em;color:#aaa;text-transform:uppercase;line-height:1;">Web</span>
+      <span style="font-family:'DM Sans',sans-serif;font-size:9.5px;font-weight:500;letter-spacing:0.18em;color:#aaa;text-transform:uppercase;line-height:1;">Agency</span>
     </span>
   </a>
   <ul class="nav-links">
@@ -2121,13 +2175,14 @@
     <li><a href="work.html">Our Work</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="faq.html">FAQ</a></li>
+    <li><a href="demo.html" style="color:var(--accent);">Free Demo ✦</a></li>
+    <li><span class="agency-tag">Web Design</span></li>
     <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
-<div class="vm-badge">VM Agency</div>
 <div class="mobile-menu" id="mobile-menu">
   <a href="index.html" onclick="closeMobile()">Home</a>
   <a href="index.html#services" onclick="closeMobile()">Services</a>
@@ -2135,6 +2190,7 @@
   <a href="work.html" onclick="closeMobile()">Our Work</a>
   <a href="about.html" onclick="closeMobile()">About</a>
   <a href="faq.html" onclick="closeMobile()">FAQ</a>
+  <a href="demo.html" onclick="closeMobile()" style="color:var(--accent);">Free Demo ✦</a>
   <a href="contact.html" class="nav-cta" onclick="closeMobile()">Get a Quote</a>
 </div>
 
@@ -2956,10 +3012,10 @@ window.addEventListener('load', function() {
     </div>
     <div style="display:flex;gap:1rem;align-items:center;">
       <a href="/cdn-cgi/l/email-protection#4129242d2d2e01372038342c332825342d6f222e2c" style="font-size:12px;color:rgba(255,255,255,0.3);text-decoration:none;display:flex;align-items:center;gap:5px;">
-        <span style="font-size:14px;">✉</span> <span class="__cf_email__" data-cfemail="365e535a5a597640574f435b445f52435a1855595b">[email&#160;protected]</span>
+        <span style="font-size:14px;">✉</span> <span class="__cf_email__" data-cfemail="365e535a5a597640574f435b445f52435a1855595b">hello&#64;vayumridul&#46;com</span>
       </a>
       <span style="color:rgba(255,255,255,0.15);">·</span>
-      <a href="/cdn-cgi/l/email-protection#087e69717d657a616c7d64486f65696164266b6765" style="font-size:12px;color:rgba(255,255,255,0.2);text-decoration:none;"><span class="__cf_email__" data-cfemail="5721362e223a253e33223b17303a363e3b7934383a">[email&#160;protected]</span></a>
+      <a href="/cdn-cgi/l/email-protection#087e69717d657a616c7d64486f65696164266b6765" style="font-size:12px;color:rgba(255,255,255,0.2);text-decoration:none;"><span class="__cf_email__" data-cfemail="5721362e223a253e33223b17303a363e3b7934383a">hello&#64;vayumridul&#46;com</span></a>
     </div>
   </div>
   <div class="footer-links">
